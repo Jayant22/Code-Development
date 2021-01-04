@@ -42,7 +42,7 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, { explorer: true }));
 
 app.get('/', function(req,res){
-  res.sendFile(path.join(__dirname + '/Public/contactDetails.html'));   
+  res.sendFile(path.join(__dirname + '/Public/contactList.html'));   
 });
 
 app.get('/api/contacts', contactCtrl.getContacts);
