@@ -8,9 +8,11 @@ const swaggerUI = require('swagger-ui-express');
 const CONTACT_DB_FILE = 'contacts.json';
 let contactList = [];
 
-fs.readFile(CONTACT_DB_FILE, (err, data) => {
-    if (err) throw err;
-    contactList = JSON.parse(data);
+fs.readFile(CONTACT_DB_FILE, (error, data) => {
+  if (error)
+    throw error;
+  
+  contactList = JSON.parse(data);
 });
 
 function logRequestTime(req, res, next){
@@ -84,8 +86,8 @@ app.get("/contacts/:id", function(req,res){
 	contact ? res.status(200).json(contact) : res.sendStatus(404);
 });
 
-app.listen(3000, function () {
-    console.log("Conatct List App listening on port 3000",);
+app.listen(4000, function () {
+    console.log("Conatct List App listening on port 4000",);
   });
 
   

@@ -23,7 +23,7 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, { explorer: true }));
 
 app.get('/', function(req,res){
-    res.sendFile(path.join(__dirname + '/Index.html'));   
+    res.sendFile(path.join(__dirname + "/Presentation/Index.html"));   
 });
 
 app.use("/contacts", require("./Controllers/contactController"));
